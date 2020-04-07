@@ -17,7 +17,7 @@ import configobj
 import collections
 
 # Third-party modules
-import natsort
+import natsort as natsort
 
 # Load configuration
 config = configobj.ConfigObj('cc2asn.conf')
@@ -107,7 +107,7 @@ for cc in ccdata:
         if iptype == "IPV6":
             data = sorted(typedata[iptype])
         else:
-            print("nope") #data = natsort.natsort(typedata[iptype])
+            data = natsort.natsorted(typedata[iptype])
         alldata += data
 
         with open(filepath, 'w+') as f:
