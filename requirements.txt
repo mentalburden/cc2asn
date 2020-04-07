@@ -1,6 +1,4 @@
 configobj
 natsort
 argparse
-threading
 SocketServer
-logging
