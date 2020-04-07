@@ -271,7 +271,7 @@ if __name__ == '__main__':
     # Log to local syslog
     logger = logging.getLogger('CC2ASN')
     logger.setLevel(logging.INFO)
-    syslog = SysLogHandler(address='/working/log')
+    syslog = SysLogHandler(address='/dev/log')
     formatter = logging.Formatter('%(name)s: <%(levelname)s> -  %(message)s')
     syslog.setFormatter(formatter)
     logger.addHandler(syslog)
