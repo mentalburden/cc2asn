@@ -107,7 +107,7 @@ for cc in ccdata:
         if iptype == "IPV6":
             data = sorted(typedata[iptype])
         else:
-            data = natsort.natsort(typedata[iptype])
+            print("nope") #data = natsort.natsort(typedata[iptype])
         alldata += data
 
         with open(filepath, 'w+') as f:
