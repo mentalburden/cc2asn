@@ -1,11 +1,6 @@
 configobj
 natsort
-pwd
-grp
-errno
-signal
 argparse
-datetime
 threading
 SocketServer
 logging
