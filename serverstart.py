@@ -169,7 +169,7 @@ def parse_input():
     args = parser.parse_known_args()[0]
 
     if args.confpath is None:
-        args.confpath = '/etc/default/cc2asn'
+        args.confpath = '/working/cc2asn'
         logger.info('No config file specified. Using {}'.format(args.confpath))
 
     return args
@@ -271,7 +271,7 @@ if __name__ == '__main__':
     # Log to local syslog
     logger = logging.getLogger('CC2ASN')
     logger.setLevel(logging.INFO)
-    syslog = SysLogHandler(address='/dev/log')
+    syslog = SysLogHandler(address='/working/log')
     formatter = logging.Formatter('%(name)s: <%(levelname)s> -  %(message)s')
     syslog.setFormatter(formatter)
     logger.addHandler(syslog)
