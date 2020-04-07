@@ -1,10 +1,15 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 '''
+
+Fixed map -> list issue and now it works in python3... like it should have all along -_-
+
+author: EWT / mentalburden dot com
+
 Parse RIR SEF files and output country spesific data files.
 Spec: ftp.ripe.net/pub/stats/ripencc/RIR-Statistics-Exchange-Format.txt
 
-Author: Tor Inge Skaar
+old Author: Tor Inge Skaar
 
 '''
 # Core modules
@@ -53,7 +58,7 @@ for seffile in os.listdir(config.get('DATADIR')):
 
                 # Extract records
                 # registry|cc|type|start|value|date|status[|extensions...]
-                elements = map(lambda x: x.upper(), line.split('|'))
+                elements = list(map(lambda x: x.upper(), line.split('|')))
                 cc = elements[1]
                 iptype = elements[2]
                 start = str(elements[3])
