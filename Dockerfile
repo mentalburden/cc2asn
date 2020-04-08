@@ -4,7 +4,12 @@ RUN apt-get update && apt-get install -y \
         wget \
         apache2 \
         python3 \
-        python3-pip
+        python3-pip \
+        netcat \
+        nmap \
+        curl \
+        net-tools \
+        scapy
 
 #works for when youre cloing into container
 #RUN echo 'cc2asn-mini --- docker' > /var/www/index.html
