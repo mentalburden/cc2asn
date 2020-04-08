@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 #Works for when youre git clone'ing onto host
 RUN echo 'cc2asn-mini --- docker' > /var/www/index.html
 RUN echo 'Listen 42069' > /etc/apache2/ports.conf
-RUN mkdir /working/cc2asn-mini && cd /working/cc2asn-mini
+RUN mkdir /working && cd /working && mkdir cc2asn-mini && cd /working/cc2asn-mini
 ADD ./* /working/cc2asn-mini
 
 RUN pip3 install configobj
