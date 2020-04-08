@@ -25,7 +25,7 @@ ADD ./* /working/cc2asn-mini/
 
 RUN pip3 install configobj
 RUN pip3 install natsort
-RUN (crontab -u root -l; echo "* * * * * /working/cc2asn-mini/dockerc2.sh" ) | crontab -u root -
+RUN echo "* * * * *   root   cd /working/cc2asn-mini && dockerc2.sh" >> /etc/crontab
 RUN cd /working/cc2asn-mini && cp 000-default.conf /etc/apache2/sites-available/000-default.conf
 RUN cd /working/cc2asn-mini && ./RIR-downloader.sh
 RUN cd /working/cc2asn-mini && ./SEF-parser.py
